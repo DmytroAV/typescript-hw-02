@@ -1,6 +1,8 @@
 /*
-  У вас є перелік UserRole, який використовується для класифікації користувачів у вашому додатку.
-  Ви хочете створити об'єкт RoleDescription, який зіставлятиме кожну роль користувача з її описом.
+  У вас є перелік UserRole, який використовується для 
+  класифікації користувачів у вашому додатку.
+  Ви хочете створити об'єкт RoleDescription, 
+  який зіставлятиме кожну роль користувача з її описом.
 */
 
 export enum UserRole {
@@ -10,10 +12,13 @@ export enum UserRole {
 }
 
 // Замініть наступний код на версію за допомогою Record
-const RoleDescription = {
-  admin: 'Admin User',
-  editor: 'Editor User',
-  guest: 'Guest User',
+
+type UserDescription = Record<UserRole, string>;
+
+const RoleDescription: UserDescription = {
+  [UserRole.admin]: 'Admin User',
+  [UserRole.editor]: 'Editor User',
+  [UserRole.guest]: 'Guest User',
 };
 
 export {};
